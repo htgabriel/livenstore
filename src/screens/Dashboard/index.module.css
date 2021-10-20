@@ -26,32 +26,6 @@
     flex: 1;
 }
 
-.pagination {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    margin-top: 30px;
-}
-
-.pagination > span {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    background-color: #fff;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.pagination > span:hover {
-    filter: brightness(1.2);
-}
-.pagination > span.active {
-    background-color: var(--background-low-opacity);
-}
-
 
 /*MOBILE*/
 @media only screen and (max-width: 991px) {
