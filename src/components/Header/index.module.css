@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-secondary);
+    padding: 5px 15px;
+}
+
+.header .content {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 40px;
+    font-family: 'Prata', serif;
+    letter-spacing: 10px;
+}
+
+.relative {
+    position: relative;
+}
