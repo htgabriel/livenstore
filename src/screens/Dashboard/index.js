@@ -1,7 +1,6 @@
 import React from "react";
 import styles from './index.module.css'
-import {Header} from '../../components'
-import {Search} from '../../components'
+import {Card, Header, Search} from '../../components'
 
 function Dashboard(){
 	return (
@@ -12,36 +11,14 @@ function Dashboard(){
 			
 			<div className={styles.dashboard}>
 				<div className={styles.content}>
-					<div className={styles.card}>
-					
-					</div>
-					
-					<div className={styles.card}>
-					
-					</div>
-					
-					<div className={styles.card}>
-					
-					</div>
-					
-					<div className={styles.card}>
-					
-					</div>
-					
-					<div className={styles.card}>
-					
-					</div>
-					
-					<div className={styles.card}>
-					
-					</div>
-					
-					<div className={styles.card}>
-					
-					</div>
-					<div className={styles.card}>
-					
-					</div>
+					<Card />
+					<Card />
+					<Card />
+					<Card />
+					<Card />
+					<Card />
+					<Card />
+					<Card />
 				</div>
 				
 				<div className={styles.pagination}>

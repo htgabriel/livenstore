@@ -26,14 +26,6 @@
     flex: 1;
 }
 
-.card {
-    width: 100%;
-    background-color: var(--background-primary);
-    border-radius:  8px 8px;
-    height: 100%;
-    flex: 1;
-}
-
 .pagination {
     width: 100%;
     display: flex;
@@ -51,7 +43,22 @@
     display: flex;
     background-color: #fff;
     transition: 0.3s;
+    cursor: pointer;
+}
+.pagination > span:hover {
+    filter: brightness(1.2);
 }
 .pagination > span.active {
     background-color: var(--background-low-opacity);
+}
+
+
+/*MOBILE*/
+@media only screen and (max-width: 991px) {
+    .dashboard {
+        padding: 30px;
+    }
+    .content {
+        grid-template-columns: 1fr;
+    }
 }
