@@ -1,0 +1,102 @@
+.card {
+    width: 100%;
+    background-color: var(--background-primary);
+    border-radius:  8px 8px;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+}
+
+.body {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.body span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product {
+    font-weight: bold;
+}
+
+.btndesktop {
+    position: absolute;
+    background-color: #ffffff50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.btndesktop button {
+    background-color: var(--background-button);
+    color: var(--text);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card:hover .btndesktop {
+    opacity: 1;
+    visibility: visible;
+}
+.btndesktop button:hover {
+    filter: brightness(1.2);
+}
+
+
+.btnmobile {
+    width: 100%;
+    padding: 5px 15px;
+    display: none;
+}
+.btnmobile button {
+    width: 100%;
+    background-color: var(--background-button);
+    border: none;
+    transition: 0.3s;
+    border-radius: 8px;
+    padding: 5px;
+    color: var(--text);
+    font-weight: bold;
+    cursor: pointer;
+}
+.btnmobile button:hover {
+    filter: brightness(1.2);
+}
+
+/*MOBILE*/
+@media only screen and (max-width: 991px) {
+    .btndesktop {
+        display: none;
+    }
+    .btnmobile {
+        display: flex;
+    }
+}
