@@ -1,25 +1,30 @@
+import React, {useContext} from "react";
 import styles from './index.module.css'
-import React from "react";
 import {BiPlus} from "react-icons/all";
+import CartProductsContext from "../../contexts/CartProducts";
 
-function Card({name, price, image}){
+function Card(product){
+	const {setProductsInCart} = useContext(CartProductsContext)
+	
 	return (
 		<div className={styles.card}>
-			<img src={image} alt="Card img"/>
+			<img src={product.image} alt={product.name}/>
 			
 			<div className={styles.body}>
-				<span className={styles.product}>{name}</span>
-				<span> {`$${price}`} </span>
+				<span className={styles.product}>{product.name}</span>
+				<span> {`$${product.price}`} </span>
 			</div>
 			
 			<div className={styles.btndesktop}>
-				<button>
-					<BiPlus />
-				</button>
+				<button
+					onClick={() => setProductsInCart(product)}
+				> <BiPlus /> </button>
 			</div>
 			
 			<div className={styles.btnmobile}>
-				<button> Add to cart </button>
+				<button
+					onClick={() => setProductsInCart(product)}
+				> Add to cart </button>
 			</div>
 		</div>
 	)
