@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--background-secondary);
-    padding: 5px 15px;
+    padding: 10px 15px;
 }
 
 .header .content {
@@ -12,6 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .menu {
@@ -27,4 +31,20 @@
 
 .relative {
     position: relative;
+}
+
+.productsInCart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--background-terciary);
+    color: var(--text-invert);
+    top: -5px;
+    right: -5px;
+    font-size: 14px;
 }
