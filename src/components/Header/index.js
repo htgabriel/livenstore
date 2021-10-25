@@ -1,10 +1,12 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {MdOutlineShoppingCart} from "react-icons/all";
 import {CartDropdown} from "../";
 import styles from './index.module.css'
+import CartProductsContext from "../../contexts/CartProducts";
 
 function Header(){
 	const [cartVisible, setVisibility] = useState(false)
+	const {productsInCart} = useContext(CartProductsContext)
 	
 	function toggleDropdown(){
 		setVisibility(!cartVisible)
@@ -26,7 +28,13 @@ function Header(){
 					<MdOutlineShoppingCart
 						size={35}
 						onClick={toggleDropdown}
+						className={styles.pointer}
 					/>
+					
+					<span className={styles.productsInCart}>
+						{productsInCart.length}
+					</span>
+					
 					<CartDropdown
 						isVisible={cartVisible}
 					/>
