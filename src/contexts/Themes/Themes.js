@@ -25,8 +25,9 @@ export const darkTheme = {
 export const GlobalStyles = createGlobalStyle
 	`
       	@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-      
-		#root {
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+          #root {
 			height: 100vh !important;
 		}
 		
@@ -50,6 +51,8 @@ export const GlobalStyles = createGlobalStyle
           line-height: 1;
           background-color: var(--background-primary);
           color: var(--text);
+          font-family: 'Open Sans', sans-serif;
+          font-size: 16px;
         }
 
         //RESET FOR CSS
@@ -69,8 +72,6 @@ export const GlobalStyles = createGlobalStyle
 			margin: 0;
 			padding: 0;
 			border: 0;
-			font-size: 100%;
-			font: inherit;
 			vertical-align: baseline;
         }
         /* HTML5 display-role reset for older browsers */
