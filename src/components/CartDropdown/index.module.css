@@ -15,6 +15,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translate(0, 60px);
+    box-shadow: 0 0 10px #00000030;
 }
 
 .cart.show {
@@ -113,4 +114,37 @@
 }
 .total button:hover {
     filter: brightness(1.2);
+}
+.list {
+    max-height: 28vh;
+    overflow: auto;
+}
+.title {
+    font-size: 1.1em;
+    padding: 5px;
+    border-bottom: 2px solid var(--text);
+    margin-bottom: 10px;
+}
+.cart_empty {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+    .cart {
+        top: unset;
+        bottom: calc(100% + 30px);
+        color: var(--text-invert);
+    }
+    .cart:after {
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        border-top: 10px solid var(--background-secondary);
+        border-bottom: 10px solid transparent;
+        bottom: -20px;
+        top: unset;
+    }
 }
