@@ -15,38 +15,38 @@ function Cart(){
 					<div>
 						<div className={styles.card}>
 							<span className={styles.title}>Your order</span>
-							{productsInCart.map(product => {
-								console.log(product)
-								return(
-									<div
-										key={product.id}
-										className={styles.item}
-									>
-										<img src={product.image} alt={product.name} />
-										<div className={styles.info}>
-											<div className={styles.name}>{product.name}</div>
-											<div>
-												<span>Product Quantity: </span>
-												
-												<input
-													type="number"
-													defaultValue={product.quantity}
-													onChange={({target: {value}}) => value > product.quantity ? addProductsInCart(product.id) : subtractProductsInCart(product.id)}
-												/>
-											</div>
-										</div>
-										<div className={styles.value}>
-											<span>
-												${product.price}
-											</span>
+							{productsInCart.map(product => (
+								<div
+									key={product.id}
+									className={styles.item}
+								>
+									<img src={product.image} alt={product.name} />
+									<div className={styles.info}>
+										<div className={styles.name}>{product.name}</div>
+										<div>
+											<span>Product Quantity: </span>
 											
-											<span className={styles.delete} onClick={() => window.confirm('Deseja realmente excluir este item do carrinho?') && removeProductsInCart(product.id)}>
-											    <AiOutlineClose />
-											</span>
+											<input
+												type="number"
+												defaultValue={product.quantity}
+												onChange={({target: {value}}) => value > product.quantity ? addProductsInCart(product.id) : subtractProductsInCart(product.id)}
+											/>
 										</div>
 									</div>
-								)
-							})}
+									<div className={styles.value}>
+										<span>
+											${product.price}
+										</span>
+										
+										<span
+											className={styles.delete}
+											onClick={() => window.confirm('Deseja realmente excluir este item do carrinho?') && removeProductsInCart(product.id)}
+										>
+										    <AiOutlineClose />
+										</span>
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 					

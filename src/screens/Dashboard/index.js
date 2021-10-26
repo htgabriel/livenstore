@@ -20,7 +20,6 @@ function Dashboard(){
 				})
 				setProducts(data)
 			}catch (err){
-				console.log(err)
 			}
 		})()
 	}, [page, filter])
