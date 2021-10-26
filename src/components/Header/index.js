@@ -1,12 +1,15 @@
 import React, {useContext, useState} from "react";
-import {MdOutlineShoppingCart} from "react-icons/all";
+import {BiMoon, BsSun, MdOutlineShoppingCart} from "react-icons/all";
 import {CartDropdown} from "../";
 import styles from './index.module.css'
-import CartProductsContext from "../../contexts/CartProducts";
+import {CartProductsContext, ThemeContext} from "../../contexts";
+import {useHistory} from "react-router-dom";
 
 function Header(){
 	const [cartVisible, setVisibility] = useState(false)
 	const {productsInCart} = useContext(CartProductsContext)
+	const {theme, toggleTheme} = useContext(ThemeContext)
+	const history = useHistory()
 	
 	function toggleDropdown(){
 		setVisibility(!cartVisible)
@@ -28,7 +31,10 @@ function Header(){
 					<div> LOGIN </div>
 				</div>
 				
-				<div className={styles.logo}>
+				<div
+					className={styles.logo}
+					onClick={() => history.push('/')}
+				>
 					LIVEN STORE
 				</div>
 				
