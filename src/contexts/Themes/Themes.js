@@ -3,11 +3,11 @@ import {createGlobalStyle} from "styled-components";
 export const lightTheme = {
 	backgroundPrimary: '#EFEFEF',
 	backgroundSecondary: '#FFFFFF',
-	backgroundTertiary: '#FF000080',
+	backgroundTertiary: '#FF0000',
 	backgroundButton: '#48AC64',
 	backgroundButtonInvert: '#3F3F3F',
 	backgroundLowOpacity: '#C4C4C460',
-	text: '#727272',
+	text: '#303030',
 	textInvert: '#000000',
 }
 
