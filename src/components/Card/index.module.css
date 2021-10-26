@@ -29,6 +29,7 @@
 .body span {
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 25px;
 }
 
 .product {
