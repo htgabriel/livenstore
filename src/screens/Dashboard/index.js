@@ -36,14 +36,20 @@ function Dashboard(){
 							/>
 						)
 					})}
+				</div>
+				
+				<div className={styles.pagination} style={{display: "flex", width: "100%", justifyContent: "space-between", marginTop: 20}}>
+					<div>
+						{page !== 1 &&
+							<span onClick={() => setPage(page -1)}>Pagina Anterior</span>
+						}
+					</div>
 					
-					{page !== 1 &&
-						<span onClick={() => setPage(page -1)}>Pagina Anterior</span>
-					}
-					
-					{products.length === limit_per_page &&
-						<span onClick={() => setPage(page + 1)}>Próxima Página</span>
-					}
+					<div>
+						{products.length === limit_per_page &&
+							<span onClick={() => setPage(page + 1)}>Próxima Página</span>
+						}
+					</div>
 				</div>
 			</div>
 		</div>

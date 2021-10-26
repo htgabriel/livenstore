@@ -23,7 +23,21 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px 60px;
-    flex: 1;
+}
+
+.pagination {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination div{
+    cursor: pointer;
+}
+
+.pagination div:hover {
+    color: var(--text-invert);
 }
 
 
