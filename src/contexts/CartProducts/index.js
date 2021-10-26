@@ -21,11 +21,7 @@ export function CartProductsProvider({children}){
 	}
 	
 	function removeProductsInCart(id_product){
-		const o = productsInCart.filter(p => p.id !== id_product)
-		console.log('__________________')
-		console.log(o)
-		console.log('remover produto do carrinho')
-		updateProductsInCart(o)
+		updateProductsInCart(productsInCart.filter(p => p.id !== id_product))
 	}
 	
 	function addProductsInCart(id_product){
