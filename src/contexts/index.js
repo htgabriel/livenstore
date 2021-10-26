@@ -1,8 +1,9 @@
 import CartProductsContext, {CartProductsProvider} from "./CartProducts";
-import ThemesProvider from "./Themes";
+import ThemeContext, {ThemesProvider} from "./Themes";
 
 export {
 	CartProductsContext,
 	CartProductsProvider,
-	ThemesProvider
+	ThemesProvider,
+	ThemeContext
 }

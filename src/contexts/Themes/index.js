@@ -4,7 +4,7 @@ import {GlobalStyles, lightTheme, darkTheme} from './Themes'
 
 const ThemeContext = createContext({})
 
-function ThemesProvider({children}){
+export function ThemesProvider({children}){
 	const [theme, setTheme] = useState('dark')
 	
 	const toggleTheme = () =>
@@ -26,4 +26,4 @@ function ThemesProvider({children}){
 	)
 }
 
-export default ThemesProvider
+export default ThemeContext
