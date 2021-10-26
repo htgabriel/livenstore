@@ -1,9 +1,16 @@
+.ckboxMenu, .hamburguer {
+    display: none;
+}
+
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--background-secondary);
     padding: 10px 15px;
+    z-index: 11;
+    box-shadow: 0 0 10px #00000030;
+    border-radius: 0 0 8px 8px;
 }
 
 .header .content {
@@ -29,7 +36,7 @@
     letter-spacing: 10px;
 }
 
-.relative {
+.cart {
     position: relative;
 }
 
@@ -47,4 +54,99 @@
     top: -5px;
     right: -5px;
     font-size: 14px;
+}
+.flex {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.themeButton {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 991px) {
+    .logo {
+        font-size: 20px;
+    }
+    .hideMobile {
+        display: none;
+    }
+    .cart {
+        position: fixed;
+        bottom: 30px;
+        right: 10px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff90;
+        color: black;
+        border-radius: 50%;
+    }
+    .logo {
+        order: 1;
+    }
+    .hamburguer {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+    .hamburguer > span {
+        width: 20px;
+        height: 2px;
+        background-color: var(--text);
+        display: flex;
+        transition: 0.3s;
+    }
+    .ckboxMenu:checked + .hamburguer > span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 5px);
+    }
+    .ckboxMenu:checked + .hamburguer > span:nth-child(2) {
+        transform: rotate(-45deg);
+    }
+    .ckboxMenu:checked + .hamburguer > span:nth-child(3) {
+        transform: translate(0, 20px);
+        opacity: 0;
+    }
+    .menu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--background-secondary);
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        z-index: -1;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+    .menu > div {
+        opacity: 0;
+        transform: translate(0, 60px);
+        transition: 1s;
+        transition-delay: 0.2s;
+    }
+    .ckboxMenu:checked ~ .menu {
+        max-height: 100vh;
+    }
+    .ckboxMenu:checked ~ .menu > div {
+        opacity: 1;
+        transform: translate(0, -20px);
+    }
+    .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
 }
