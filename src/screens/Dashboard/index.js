@@ -7,24 +7,35 @@ const limit_per_page = 8
 function Dashboard(){
 	const [products, setProducts] = useState([])
 	const [page, setPage] = useState(1)
+	const [filter, setFilter] = useState('')
 	
 	useEffect(() => {
 		(async () => {
-			const {data} = await api.get(`api/v1/product`, {
-				params: {
-					page,
-					limit: limit_per_page
-				}
-			})
-			setProducts(data)
+			try{
+				const {data} = await api.get(`api/v1/product?${filter ? `name=${filter}` : ''}`, {
+					params: {
+						page,
+						limit: limit_per_page
+					}
+				})
+				setProducts(data)
+			}catch (err){
+				console.log(err)
+			}
 		})()
-	}, [page])
+	}, [page, filter])
+	
+	function filterProducts(txtProducts){
+		setFilter(txtProducts)
+	}
 	
 	return (
 		<div className={styles.container}>
 			<Header />
 			
-			<Search />
+			<Search
+				onSearch={filterProducts}
+			/>
 			
 			<div className={styles.dashboard}>
 				<div className={styles.content}>
