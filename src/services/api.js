@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-	baseURL: "https://5d6da1df777f670014036125.mockapi.io/"
+	baseURL: "https://62afd8da3bbf46a35226e4ee.mockapi.io/livenstore/"
 })
 
 export default api
